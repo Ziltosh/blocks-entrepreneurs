@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "entrepreneurs/header",
+	"version": "0.1.0",
+	"title": "Header",
+	"category": "text",
+    "keywords": [],
+	"description": "",
+	"supports": {
+		"html": false
+	},
+    "attributes": {
+		"postId": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"example": {},
+	"textdomain": "entrepreneurs",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor-style.css",
+    "style": "file:./style.css"
+}

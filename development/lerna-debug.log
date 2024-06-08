@@ -1,0 +1,23 @@
+0 silly argv {
+0 silly argv   _: [ 'run' ],
+0 silly argv   lernaVersion: '8.1.3',
+0 silly argv   '$0': '/Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/.bin/lerna',
+0 silly argv   script: 'dev:back'
+0 silly argv }
+1 notice cli v8.1.3
+2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+3 verbose rootPath /Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development
+4 error Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+4 error   MultipleProjectsWithSameNameError: The following projects are defined in multiple locations:
+4 error   - entrepreneurs_starbutton:
+4 error     - packages/hero
+4 error     - packages/starbutton
+4 error
+4 error   To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+4 error       at validateAndNormalizeProjectRootMap (/Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/nx/src/project-graph/utils/project-configuration-utils.js:438:15)
+4 error       at mergeCreateNodesResults (/Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/nx/src/project-graph/utils/project-configuration-utils.js:317:9)
+4 error       at /Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/nx/src/project-graph/utils/project-configuration-utils.js:258:85
+4 error       at async buildProjectGraphAndSourceMapsWithoutDaemon (/Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/nx/src/project-graph/project-graph.js:77:31)
+4 error       at async createProjectGraphAndSourceMapsAsync (/Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/nx/src/project-graph/project-graph.js:202:25)
+4 error       at async createProjectGraphAsync (/Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/nx/src/project-graph/project-graph.js:191:39)
+4 error       at async detectProjects (/Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/lerna/dist/index.js:1563:25)

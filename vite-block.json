@@ -1,0 +1,13 @@
+{
+  "name": "Blocks Entrepreneurs",
+  "version": "0.0.1",
+  "homepage": "https://entrepreneurs.com/",
+  "author": "Nicolas Egermann",
+  "author_homepage": "https://rfpsb.fr",
+  "sections": {
+    "description": "Blocks du site Entrepreneurs.com",
+    "installation": "Rien de spécial.",
+    "changelog": "<ul><li>0.0.1: Premiers tests</li></ul>",
+    "custom_section": ""
+  }
+}
