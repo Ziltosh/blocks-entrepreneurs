@@ -4,11 +4,17 @@ import "./editor-style.css";
 import {Hero} from "./Hero";
 import {useState} from "@wordpress/element";
 
+
 export default function Edit({attributes, setAttributes, isSelected}) {
     const blockProps = useBlockProps();
     const [state, setState] = useState(true);
+    // const headerRef = useRef<HTMLDivElement>(null);
 
     return (
-        <Hero {...blockProps} videoState={state} />
+        <div {...blockProps}>
+            <Hero videoState={state} headerRef={null}/>
+        </div>
+
     );
 }
+

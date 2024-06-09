@@ -6,114 +6,15 @@ import gridTablet1 from "../src/img/svg/sections-grids/hero/bg-grid-768-1.svg";
 import gridTablet2 from "../src/img/svg/sections-grids/hero/bg-grid-768-2.svg";
 import gridMobile1 from "../src/img/svg/sections-grids/hero/bg-grid-375.svg";
 import BGGRid from "./BGGrid";
-import ClientLogos from "./ClientLogos";
 // import video from "../src/mp4/video.mp4";
 // import gridMobile2 from "@/../public/sections-grids/hero/bg-grid-375-2.svg";
 // import {useState} from "@wordpress/element";
 
 
-export const Hero = ({videoState, ...props}) => {
+export const Hero = ({videoState, headerRef, ...props}) => {
 
-    // const videoWrapper = useRef<HTMLDivElement>(null);
-    // const video = useRef<HTMLVideoElement>(null);
-    // const header = useRef<HTMLDivElement>(null);
-    // const [videoState, setVideoState] = useState(false);
     const grids1 = [gridDesktop1, gridLaptop1, gridTablet1, gridMobile1];
     const grids2 = [gridDesktop2, gridLaptop2, gridTablet2];
-
-    // const handleVideoState = () => {
-    //     if (video.current?.paused) {
-    //         setVideoState(true);
-    //         video.current.play();
-    //     } else {
-    //         setVideoState(false);
-    //         video.current?.pause();
-    //     }
-    // };
-
-    // useGSAP(() => {
-    //     const tl = gsap.timeline();
-    //     let split1: SplitText | null = null,
-    //         split2: SplitText | null = null;
-    //     if (header.current) {
-    //         split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {
-    //             type: "words",
-    //         });
-    //         split2 = new SplitText(header.current?.querySelector("p"), {
-    //             type: "words",
-    //         });
-    //         tl.then(() => {
-    //             split1?.revert();
-    //             split2?.revert();
-    //             header.current
-    //                 ?.querySelectorAll("h1 span")
-    //                 .forEach(
-    //                     (span) => ((span as HTMLElement).style.overflow = "visible")
-    //                 );
-    //         });
-    //         tl.add("start", 0);
-    //         tl.fromTo(
-    //             header.current.querySelector(".badge"),
-    //             {
-    //                 opacity: 0,
-    //             },
-    //             { opacity: 1, duration: 1 },
-    //             "start+=.25"
-    //         )
-    //             .fromTo(
-    //                 split1.words,
-    //                 {
-    //                     y: 100,
-    //                     z: -250,
-    //                 },
-    //                 {
-    //                     y: 0,
-    //                     z: 0,
-    //                     stagger: 0.2,
-    //                 },
-    //                 "start"
-    //             )
-    //             .fromTo(
-    //                 split2.words,
-    //                 {
-    //                     opacity: 0,
-    //                 },
-    //                 {
-    //                     opacity: 1,
-    //                     stagger: 0.05,
-    //                 },
-    //                 "start+=1.5"
-    //             )
-    //             .fromTo(
-    //                 header.current.querySelector(".but"),
-    //                 {
-    //                     opacity: 0,
-    //                 },
-    //                 {
-    //                     opacity: 1,
-    //                 },
-    //                 "start+=1.5"
-    //             )
-    //             .fromTo(
-    //                 videoWrapper.current,
-    //                 { opacity: 0 },
-    //                 { opacity: 1 },
-    //                 "start+=1.5"
-    //             )
-    //             .fromTo(
-    //                 videoWrapper.current,
-    //                 {
-    //                     y: 100,
-    //                     z: -150,
-    //                 },
-    //                 {
-    //                     y: 0,
-    //                     z: 0,
-    //                 },
-    //                 "start+=1.75"
-    //             );
-    //     }
-    // });
 
     return (
         <div {...props}>
@@ -172,7 +73,7 @@ export const Hero = ({videoState, ...props}) => {
                     <BGGRid images={grids1}/>
                     {/*<BGAnimatedLines/>*/}
                 </div>
-                <div className="header">
+                <div className="header" ref={headerRef}>
                     <div className="badge">
                         +10 000 entrepreneurs francophones ont vu leurs vies transformées
                     </div>
@@ -181,7 +82,7 @@ export const Hero = ({videoState, ...props}) => {
                         <span>vous êtes à un niveau supérieur</span>
                     </h1>
                     <p>oeuvrez sereinement vers l&apos;accomplissement de votre mission.</p>
-                    {/*<DoubleBut text="En savoir plus" disableAnimation={false}/>*/}
+                    {/*<InnerBlocks.Content />*/}
                 </div>
                 <div className="video-wrapper">
                     {/*<video*/}
@@ -199,7 +100,7 @@ export const Hero = ({videoState, ...props}) => {
                     {/*    <img src={play} />*/}
                     {/*</div>*/}
                 </div>
-                <ClientLogos/>
+                {/*<ClientLogos/>*/}
                 <div className="graph">
                     <div className="highlight highlight-red"></div>
                     <BGGRid images={grids2}/>

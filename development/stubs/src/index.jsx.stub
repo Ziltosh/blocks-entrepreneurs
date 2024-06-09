@@ -4,9 +4,11 @@ import "./style.css";
 
 import edit from "./edit";
 import save from "./save";
+import infos from "./block.json";
 
 registerBlockType("##namespace##/##block##", {
 	edit,
 	save,
 	attributes: {},
+	...infos,
 });

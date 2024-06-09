@@ -9,12 +9,12 @@ import {SplitText} from "gsap/SplitText";
 const elements = document.querySelectorAll('.wp-block-entrepreneurs-hero');
 
 const HeroInteractive = () => {
-    console.log('frontend', new Date().getSeconds())
-
-    const header = useRef<HTMLDivElement>(null);
     const videoWrapper = useRef<HTMLDivElement>(null);
+    const headerRef = useRef<HTMLDivElement>();
 
     const Gsap = gsap;
+
+    const tl = Gsap.timeline();
 
     Gsap.registerPlugin(ScrollTrigger, CustomEase, SplitText);
 
@@ -24,20 +24,20 @@ const HeroInteractive = () => {
     });
 
     useGSAP(() => {
-        const tl = gsap.timeline();
         let split1: SplitText | null = null,
             split2: SplitText | null = null;
-        if (header.current) {
-            split1 = new SplitText(header.current?.querySelectorAll("h1 span"), {
+        if (headerRef.current) {
+
+            split1 = new SplitText(headerRef.current?.querySelectorAll("h1 span"), {
                 type: "words",
             });
-            split2 = new SplitText(header.current?.querySelector("p"), {
+            split2 = new SplitText(headerRef.current?.querySelector("p"), {
                 type: "words",
             });
             tl.then(() => {
                 split1?.revert();
                 split2?.revert();
-                header.current
+                headerRef.current
                     ?.querySelectorAll("h1 span")
                     .forEach(
                         (span) => ((span as HTMLElement).style.overflow = "visible")
@@ -45,7 +45,7 @@ const HeroInteractive = () => {
             });
             tl.add("start", 0);
             tl.fromTo(
-                header.current.querySelector(".badge"),
+                headerRef.current.querySelector(".badge"),
                 {
                     opacity: 0,
                 },
@@ -77,7 +77,7 @@ const HeroInteractive = () => {
                     "start+=1.5"
                 )
                 .fromTo(
-                    header.current.querySelector(".but"),
+                    headerRef.current.querySelector(".but"),
                     {
                         opacity: 0,
                     },
@@ -105,16 +105,17 @@ const HeroInteractive = () => {
                     "start+=1.75"
                 );
         }
-    });
+    }, []);
 
     return (
-        <Hero videoState={true} />
+        <Hero videoState={true} headerRef={headerRef} />
     );
+
 }
 
 
 if (elements.length) {
     elements.forEach(element => {
-        hydrateRoot(element, <HeroInteractive/>)
+        hydrateRoot(element, <HeroInteractive />)
     })
 }

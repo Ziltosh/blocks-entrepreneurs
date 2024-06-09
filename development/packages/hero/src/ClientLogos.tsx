@@ -15,7 +15,7 @@ import logo9 from "./img/svg/logos/logo-9.svg";
 // import storeDevice from "../utils/store";
 
 export default function ClientLogos() {
-    console.log("ClientLogos")
+
     const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
     // const { device } = storeDevice();
     const device = "desktop";
