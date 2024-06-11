@@ -1,4 +1,4 @@
-import {hydrateRoot, useRef} from "@wordpress/element";
+import {hydrateRoot, useRef, useState} from "@wordpress/element";
 import {Hero} from "./Hero";
 import {useGSAP} from "@gsap/react";
 import {gsap} from "./gsap";
@@ -9,8 +9,10 @@ import {SplitText} from "gsap/SplitText";
 const elements = document.querySelectorAll('.wp-block-entrepreneurs-hero');
 
 const HeroInteractive = () => {
-    const videoWrapper = useRef<HTMLDivElement>(null);
     const headerRef = useRef<HTMLDivElement>();
+    const videoRef = useRef<HTMLVideoElement>();
+    const videoWrapperRef = useRef<HTMLDivElement>();
+    const [videoState, setVideoState] = useState(false);
 
     const Gsap = gsap;
 
@@ -87,13 +89,13 @@ const HeroInteractive = () => {
                     "start+=1.5"
                 )
                 .fromTo(
-                    videoWrapper.current,
+                    videoWrapperRef.current,
                     { opacity: 0 },
                     { opacity: 1 },
                     "start+=1.5"
                 )
                 .fromTo(
-                    videoWrapper.current,
+                    videoWrapperRef.current,
                     {
                         y: 100,
                         z: -150,
@@ -108,7 +110,7 @@ const HeroInteractive = () => {
     }, []);
 
     return (
-        <Hero videoState={true} headerRef={headerRef} />
+        <Hero videoState={videoState} setVideoState={setVideoState} videoRef={videoRef} videoWrapperRef={videoWrapperRef} headerRef={headerRef} />
     );
 
 }

@@ -1,15 +1,23 @@
-import {useBlockProps} from "@wordpress/block-editor";
+import {useBlockProps, useInnerBlocksProps} from "@wordpress/block-editor";
 
-import "./editor-style.css";
-import {Header} from "./header";
+import "./editor-style.scss";
 
 export default function Edit({attributes, setAttributes, className}) {
     const blockProps = useBlockProps();
-    // const innerBlockProps = useInnerBlocksProps()
+    const innerBlockProps = useInnerBlocksProps(blockProps, {
+        template: [
+            ["entrepreneurs/logoheader"],
+            ["entrepreneurs/menuheader"],
+            ["entrepreneurs/starbutton"],
+        ],
+        templateLock: 'all'
+    })
 
     return (
         <div key={"render"} {...blockProps}>
-            <Header menuId={1} />
+            <header {...innerBlockProps} id="header">
+                    {innerBlockProps.children}
+            </header>
         </div>
     )
 }

@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "entrepreneurs/starbutton",
+	"name": "entrepreneurs/menuheader",
 	"version": "0.1.0",
-	"title": "StarButton",
-	"category": "text",
+	"title": "MenuHeader",
+	"category": "design",
     "keywords": [],
 	"description": "",
 	"supports": {
@@ -12,7 +12,6 @@
 	},
     "attributes": {},
     "example": {},
-	"render": "./render.php",
 	"textdomain": "entrepreneurs",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./editor-style.css",

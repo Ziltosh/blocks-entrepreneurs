@@ -1,0 +1,30 @@
+.star-but {
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(32px);
+  border-radius: 1.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  position: relative;
+  img {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+    &.star-1 {
+      left: -18px;
+      top: -5px;
+    }
+    &.star-2 {
+      bottom: -9px;
+      right: 20px;
+    }
+    &.star-3 {
+      top: 2%;
+      right: -4px;
+      scale: 0.6;
+    }
+  }
+}

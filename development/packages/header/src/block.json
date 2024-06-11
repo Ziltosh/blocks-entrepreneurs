@@ -10,12 +10,7 @@
 	"supports": {
 		"html": false
 	},
-    "attributes": {
-		"postId": {
-			"type": "number",
-			"default": 0
-		}
-	},
+    "attributes": {},
 	"example": {},
 	"textdomain": "entrepreneurs",
 	"editorScript": "file:./index.js",

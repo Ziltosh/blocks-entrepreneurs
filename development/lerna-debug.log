@@ -2,7 +2,7 @@
 0 silly argv   _: [ 'run' ],
 0 silly argv   lernaVersion: '8.1.3',
 0 silly argv   '$0': '/Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/.bin/lerna',
-0 silly argv   script: 'dev:back'
+0 silly argv   script: 'build:front'
 0 silly argv }
 1 notice cli v8.1.3
 2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.

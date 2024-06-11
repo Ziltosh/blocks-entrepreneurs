@@ -5,16 +5,27 @@ import gridLaptop2 from "../src/img/svg/sections-grids/hero/bg-grid-1280-2.svg";
 import gridTablet1 from "../src/img/svg/sections-grids/hero/bg-grid-768-1.svg";
 import gridTablet2 from "../src/img/svg/sections-grids/hero/bg-grid-768-2.svg";
 import gridMobile1 from "../src/img/svg/sections-grids/hero/bg-grid-375.svg";
+import play from "../src/img/svg/play.svg";
 import BGGRid from "./BGGrid";
 // import video from "../src/mp4/video.mp4";
 // import gridMobile2 from "@/../public/sections-grids/hero/bg-grid-375-2.svg";
 // import {useState} from "@wordpress/element";
 
 
-export const Hero = ({videoState, headerRef, ...props}) => {
+export const Hero = ({videoState, headerRef, videoRef, videoWrapperRef, setVideoState, ...props}) => {
 
     const grids1 = [gridDesktop1, gridLaptop1, gridTablet1, gridMobile1];
     const grids2 = [gridDesktop2, gridLaptop2, gridTablet2];
+
+    const handleVideoState = () => {
+        if (videoRef.current?.paused) {
+            setVideoState(true);
+            videoRef.current.play();
+        } else {
+            setVideoState(false);
+            videoRef.current?.pause();
+        }
+    };
 
     return (
         <div {...props}>
@@ -82,23 +93,22 @@ export const Hero = ({videoState, headerRef, ...props}) => {
                         <span>vous êtes à un niveau supérieur</span>
                     </h1>
                     <p>oeuvrez sereinement vers l&apos;accomplissement de votre mission.</p>
-                    {/*<InnerBlocks.Content />*/}
                 </div>
-                <div className="video-wrapper">
-                    {/*<video*/}
-                    {/*    ref={video}*/}
-                    {/*    src={"/video.mp4"}*/}
-                    {/*    poster="./thumbnail.png"*/}
-                    {/*    loop*/}
-                    {/*    muted*/}
-                    {/*    onClick={() => handleVideoState()}*/}
-                    {/*></video>*/}
-                    {/*<div*/}
-                    {/*    className={`play-but ${videoState && "active"}`}*/}
-                    {/*    onClick={() => handleVideoState()}*/}
-                    {/*>*/}
-                    {/*    <img src={play} />*/}
-                    {/*</div>*/}
+                <div className="video-wrapper" ref={videoWrapperRef}>
+                    <video
+                        ref={videoRef}
+                        src={"/wp-content/themes/theme-entrepreneurs/src/mp4/video.mp4"}
+                        poster="/wp-content/themes/theme-entrepreneurs/src/img/thumbnail.png"
+                        loop
+                        muted
+                        onClick={() => handleVideoState()}
+                    ></video>
+                    <div
+                        className={`play-but ${videoState && "active"}`}
+                        onClick={() => handleVideoState()}
+                    >
+                        <img alt={"bouton play"} src={play} />
+                    </div>
                 </div>
                 {/*<ClientLogos/>*/}
                 <div className="graph">

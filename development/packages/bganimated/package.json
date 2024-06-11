@@ -8,7 +8,7 @@
 		"dev:back": "vite build --watch",
 		"dev:front": "vite build --config=vite.config.front.js --watch",
 		"build:back": "vite build",
-		"build:front": "vite build  --config=vite.config.view.js",
+		"build:front": "vite build  --config=vite.config.front.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
     "devDependencies": {
