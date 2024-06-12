@@ -1,5 +1,3 @@
-"use client";
-
 // @ts-ignore
 import {Splide, SplideSlide} from "@splidejs/react-splide";
 

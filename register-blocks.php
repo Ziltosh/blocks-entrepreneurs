@@ -13,7 +13,7 @@ add_action('init', function() {
         wp_register_script(
             'vite-block-' . $result,
             plugins_url(\basename(__DIR__)) . '/build/' . $result . '/front.js',
-            ['wp-element', 'wp-block-editor'],
+            ['wp-element'],
             null,
             true
         );
