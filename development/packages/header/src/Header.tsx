@@ -1,22 +1,11 @@
-import {useBlockProps, useInnerBlocksProps} from "@wordpress/block-editor";
-
+import elogo from "./img/svg/e-logo.svg";
 import Grid from "./img/Grid.png";
 import LinkedIn from "./img/social-icons/in.svg"
 import Instagram from "./img/social-icons/instagram.svg"
 import Youtube from "./img/social-icons/youtube.svg"
 import TikTok from "./img/social-icons/tiktok.svg"
-import elogo from "./img/svg/e-logo.svg";
 
-export default function Save({attributes, className}) {
-    const blockProps = useBlockProps.save()
-    const innerBlockProps = useInnerBlocksProps.save(blockProps)
-
-    // return (
-    //     <Header mobileNav={null} {...blockProps}>
-    //         {innerBlockProps.children}
-    //     </Header>
-    // )
-
+export const Header = ({mobileNav, children, ...props}) => {
     const nav = [
         {name: "Accueil", href: "/", id: 0},
         {name: "Nos Strategies", href: "/about", id: 1},
@@ -46,7 +35,7 @@ export default function Save({attributes, className}) {
     ];
 
     return (
-        <header key={"render"} {...blockProps} id={"header"}>
+        <header key={"render"} {...props} id={"header"}>
             <svg
                 className="mobile-menu-icon"
                 width="24"
@@ -124,7 +113,7 @@ export default function Save({attributes, className}) {
                     ))}
                 </ul>
             </nav>
-            <div ref={null} className="mobile-nav">
+            <div ref={mobileNav} className="mobile-nav">
                 <div className="grid">
                     <img src={Grid} alt=""/>
                 </div>
@@ -193,8 +182,7 @@ export default function Save({attributes, className}) {
                     </ul>
                 </div>
             </div>
-            {innerBlockProps.children}
+            {children}
         </header>
-    );
-
+    )
 }
