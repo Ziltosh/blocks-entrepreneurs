@@ -87,8 +87,8 @@ export default function Save({attributes}) {
             <div className="video-wrapper" ref={null}>
                 <video
                     ref={null}
-                    src={"/wp-content/themes/theme-entrepreneurs/src/mp4/video.mp4"}
-                    poster="/wp-content/themes/theme-entrepreneurs/src/img/thumbnail.png"
+                    src={"wp-content/themes/theme-entrepreneurs/src/mp4/video.mp4"}
+                    poster="wp-content/themes/theme-entrepreneurs/src/img/thumbnail.png"
                     loop
                     muted
                     onClick={null}
