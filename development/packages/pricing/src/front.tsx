@@ -9,6 +9,7 @@ import gridDesktop from './img/sections-grids/pricing/bg-grid-1920.svg';
 import gridLaptop from './img/sections-grids/pricing/bg-grid-1280.svg';
 import gridTablet from './img/sections-grids/pricing/bg-grid-768.svg';
 import gridMobile from './img/sections-grids/pricing/bg-grid-375.svg';
+import arrRight from './img/arrow-right.svg';
 import {Card} from './card.type';
 import {useGSAP} from '@gsap/react';
 
@@ -273,7 +274,9 @@ const Pricing = () => {
                             {card.priceText && <div className="price-text">{card?.priceText}</div>}
                             <button className="but">
                                 <span>{card.buttonText}</span>
-                                {/* <RedArrRight /> */}
+                                <div className="red-arr-wrapper">
+                                    <img src={arrRight} alt="" />
+                                </div>
                             </button>
                         </div>
                     </div>

@@ -8,7 +8,7 @@
     "keywords": [],
 	"description": "",
 	"supports": {
-		"html": false
+		"html": true
 	},
     "attributes": {},
 	"example": {},

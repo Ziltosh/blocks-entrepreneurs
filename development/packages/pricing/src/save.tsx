@@ -2,6 +2,7 @@ import {useBlockProps} from '@wordpress/block-editor';
 
 import cardBg from './img/card-bg-hover.png';
 import {Card} from './card.type';
+import arrRight from "./img/arrow-right.svg";
 
 export default function Save({ attributes }) {
     const blockProps = useBlockProps.save();
@@ -90,7 +91,12 @@ export default function Save({ attributes }) {
                             {card.priceText && <div className="price-text">{card?.priceText}</div>}
                             <button className="but">
                                 <span>{card.buttonText}</span>
-                                {/* <RedArrRight /> */}
+                                <button className="but">
+                                    <span>{card.buttonText}</span>
+                                    <div className="red-arr-wrapper">
+                                        <img src={arrRight} alt="" />
+                                    </div>
+                                </button>
                             </button>
                         </div>
                     </div>

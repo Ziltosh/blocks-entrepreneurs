@@ -12,6 +12,7 @@ import BGGRid from './BGGrid';
 import {BGAnimatedLines} from './BgAnimatedLines';
 import {useRef} from '@wordpress/element';
 import {Card} from './card.type';
+import arrRight from "./img/arrow-right.svg";
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
     const blockProps = useBlockProps();
@@ -105,7 +106,12 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
                             {card.priceText && <div className="price-text">{card?.priceText}</div>}
                             <button className="but">
                                 <span>{card.buttonText}</span>
-                                {/* <RedArrRight /> */}
+                                <button className="but">
+                                    <span>{card.buttonText}</span>
+                                    <div className="red-arr-wrapper">
+                                        <img src={arrRight} alt="" />
+                                    </div>
+                                </button>
                             </button>
                         </div>
                     </div>
