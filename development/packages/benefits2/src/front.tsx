@@ -18,7 +18,6 @@ const Benefits2 = () => {
 
     const grids = [gridDesktop, gridLaptop, gridTablet, gridMobile];
 
-
     return (
         <>
             <BGGRid images={grids}/>
