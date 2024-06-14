@@ -1,21 +1,8 @@
 import {useBlockProps} from "@wordpress/block-editor";
-
-import gridDesktop1 from "../src/img/svg/sections-grids/hero/bg-grid-1920-1.svg";
-import gridDesktop2 from "../src/img/svg/sections-grids/hero/bg-grid-1920-2.svg";
-import gridLaptop1 from "../src/img/svg/sections-grids/hero/bg-grid-1280-1.svg";
-import gridLaptop2 from "../src/img/svg/sections-grids/hero/bg-grid-1280-2.svg";
-import gridTablet1 from "../src/img/svg/sections-grids/hero/bg-grid-768-1.svg";
-import gridTablet2 from "../src/img/svg/sections-grids/hero/bg-grid-768-2.svg";
-import gridMobile1 from "../src/img/svg/sections-grids/hero/bg-grid-375.svg";
-
-import BGGRid from "./BGGrid";
 import play from "./img/svg/play.svg";
 
 export default function Save({attributes}) {
     const blockProps = useBlockProps.save();
-
-    const grids1 = [gridDesktop1, gridLaptop1, gridTablet1, gridMobile1];
-    const grids2 = [gridDesktop2, gridLaptop2, gridTablet2];
 
     return (
         <div {...blockProps} id="hero">
@@ -70,7 +57,7 @@ export default function Save({attributes}) {
                         </linearGradient>
                     </defs>
                 </svg>
-                <BGGRid images={grids1}/>
+                {/*<BGGRid images={grids1}/>*/}
                 {/*<BGAnimatedLines/>*/}
             </div>
             <div className="header" ref={null}>
@@ -103,7 +90,7 @@ export default function Save({attributes}) {
             {/*<ClientLogos/>*/}
             <div className="graph">
                 <div className="highlight highlight-red"></div>
-                <BGGRid images={grids2}/>
+                {/*<BGGRid images={grids2}/>*/}
                 <div className="text-quote">
                     Êtes-vous prêt à transformer radicalement votre quotidien et votre vie
                     en l&apos;espace de quelques mois,
