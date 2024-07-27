@@ -1,0 +1,36 @@
+h2.wp-block-entrepreneurs-h2 {
+  font-size: 3.75rem;
+  font-weight: 500;
+  line-height: 115%; /* 3.75rem */
+  letter-spacing: -0.075rem;
+  display: flex;
+  flex-direction: column;
+  > span {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    overflow: hidden;
+    perspective: 1000px;
+    display: inline-block;
+    div {
+      display: inline-block;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    &:first-child,
+    &:first-of-type div {
+      background-image: linear-gradient(180deg, #ffe6e6 26.6%, #c8aeae 100%);
+    }
+    &:last-child,
+    &:last-of-type div {
+      background-image: linear-gradient(
+                      90deg,
+                      #e00 5.94%,
+                      #ff5664 26.9%,
+                      #ff844f 60.95%,
+                      #e00 93.41%
+      );
+    }
+  }
+}

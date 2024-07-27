@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "entrepreneurs/wizard",
+	"name": "entrepreneurs/footer",
 	"version": "0.1.0",
-	"title": "Wizard",
+	"title": "footer",
 	"category": "design",
     "keywords": [],
 	"description": "",
 	"supports": {
-		"html": true
+		"html": false
 	},
     "attributes": {},
     "example": {},

@@ -1,13 +1,13 @@
 // vite.config.js
 import {
     defineConfig
-} from "file:///Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/vite/dist/node/index.js";
+} from "file:///Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/blocks-entrepreneurs/development/node_modules/vite/dist/node/index.js";
 import {
     createViteBlock
-} from "file:///Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/vite-plugin-gutenberg-blocks/dist/index.js";
+} from "file:///Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/blocks-entrepreneurs/development/node_modules/vite-plugin-gutenberg-blocks/dist/index.js";
 import {
     viteStaticCopy
-} from "file:///Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/vite-block/development/node_modules/vite-plugin-static-copy/dist/index.js";
+} from "file:///Users/nicolas/Documents/Developpement/Web/wp-dev/wp-content/plugins/blocks-entrepreneurs/development/node_modules/vite-plugin-static-copy/dist/index.js";
 import {resolve} from "node:path";
 
 var vite_config_default = defineConfig({
