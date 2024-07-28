@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "entrepreneurs/h2",
+	"version": "0.1.0",
+	"title": "h2",
+	"category": "text",
+    "keywords": [],
+	"description": "",
+	"supports": {
+		"html": false
+	},
+    "attributes": {
+		"line1": {
+			"type": "string",
+			"default": "Votre titre"
+		},
+		"line2": {
+			"type": "string",
+			"default": "sur 2 lignes"
+		}
+	},
+    "example": {},
+	"textdomain": "entrepreneurs",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor-style.css",
+    "style": "file:./style.css"
+}

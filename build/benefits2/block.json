@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "entrepreneurs/benefits2",
+	"version": "0.1.0",
+	"title": "Benefits2",
+	"category": "design",
+    "keywords": [],
+	"description": "",
+	"supports": {
+		"html": true
+	},
+    "attributes": {},
+    "example": {},
+	"textdomain": "entrepreneurs",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor-style.css",
+    "style": "file:./style.css"
+}
