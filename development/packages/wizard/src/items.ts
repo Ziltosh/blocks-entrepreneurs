@@ -15,32 +15,32 @@ export const items: Item[] = [
     {
         icon: icon1,
         title:
-            "L’accompagnement qu’il vous faut pour ne plus être seule.e face aux enjeux de croissance de votre business en ligne ou physique.",
-        des: "Une stratégie adaptée à votre marché et vos enjeux pour ne plus paniquer au milieu des requins.",
-        buttonText: "Clarté et Sérénité dans vos décisions et actions.",
+            "Un accompagnement unique et sur mesure permettant de dépasser votre plafond de verre actuel, tout en assurant une meilleure gestion, fluidité et qualité de vie entrepreneuriale",
+        des: "Nous élaborons une stratégie adaptée à votre marché et à vos enjeux spécifiques, afin que vous puissiez naviguer sereinement dans un environnement compétitif.",
+        // buttonText: "Clarté et Sérénité dans vos décisions et actions.",
     },
     {
         icon: icon2,
         title:
-            "L’expertise, la vision et le soutien, d’une équipe de coachs qui vous accompagnera individuellement, collectivement et quotidiennement.",
-        des: "Vous enlevez ce qui vous freinent et ajoutez ce qui vous manque.",
+            "De la clarté et sérénité dans vos décisions et actions",
+        des: "Bénéficiez de l’expertise, de la vision et du soutien d'une équipe de coachs dédiée à votre succès. Nous vous accompagnons individuellement pour lever les freins et combler les lacunes.",
     },
     {
         icon: icon3,
         title:
-            "Des ressources inestimables accessibles à vie pour soutenir votre montée en compétences.",
-        des: "Révélant des opportunités insoupçonnées.",
+            "Des ressources inestimables accessibles à vie",
+        des: "Accédez à des outils et des connaissances précieuses pour renforcer vos compétences et révéler des opportunités insoupçonnées. Mastermind, masterclasses inédites, immersions, événements…\n",
     },
     {
         icon: icon4,
         title:
-            "L’accès à la communauté d’Entrepreneurs.com pour vous construire un réseau solide.",
-        des: "L’accès à la communauté d’Entrepreneurs.com pour vous construire un réseau solide.",
+            "Un réseau solide à portée de main",
+        des: "Rejoignez la communauté d’Entrepreneurs.com pour bâtir un réseau professionnel robuste et dynamique, essentiel pour votre croissance.",
     },
     {
         icon: icon5,
-        title: "L’ouverture d’une voie entrepreneuriale novatrice,",
-        des: "Grâce à vos initiatives, vous guidera vers la réalisation de vos aspirations et vous positionnera là où vous devriez être dans l'écosystème entrepreneurial.",
-        buttonText: "Vous positionnez votre business à sa vraie place.",
+        title: "Un éveil et une prise de conscience votre potentiel entrepreneurial",
+        des: "Atteignez vos objectifs et prenez la place qui vous revient dans l'écosystème entrepreneurial, en vous positionnant comme un leader visionnaire et un acteur clé de votre marché..",
+        // buttonText: "Vous positionnez votre business à sa vraie place.",
     },
 ];

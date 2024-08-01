@@ -25,11 +25,9 @@ const Wizard = () => {
             <div className="highlight highlight-red"></div>
             <h1 ref={headerRef} className="section-title">
         <span>
-          Ce que vous obtiendrez <br/>
-          en décidant de franchir le pas
+          Ce que vous serez certain d’obtenir en nous rejoignant
         </span>
-
-                <span>avec Entrepreneurs.com</span>
+                <span>(valable pour les business en ligne ET physiques)</span>
             </h1>
             <div className="items-wrapper">
                 <div className="numbers-line">

@@ -14,8 +14,8 @@ import gridDesktop2 from "./img/svg/sections-grids/hero/bg-grid-1920-2.svg";
 import gridLaptop2 from "./img/svg/sections-grids/hero/bg-grid-1280-2.svg";
 import gridTablet2 from "./img/svg/sections-grids/hero/bg-grid-768-2.svg";
 import {BGAnimatedLines} from "./BgAnimatedLines";
-import {DoubleButton} from "./DoubleButton";
 import {HeroGraph} from "./HeroGraph";
+import {DoubleButton} from "./DoubleButton";
 
 const elements = document.querySelectorAll('.wp-block-entrepreneurs-hero');
 
@@ -192,14 +192,15 @@ const HeroInteractive = () => {
             </div>
             <div className="header" ref={headerRef}>
                 <div className="badge">
-                    +10 000 entrepreneurs francophones ont vu leurs vies transformées
+                    Nous avons accompagné + 10 500 entrepreneurs dans des centaines de niches différentes
+                    (autant de business physique que en ligne)
                 </div>
                 <h1 className="section-title">
-                    <span>Propulsez l&apos;Entrepreneur que</span>
-                    <span>vous êtes à un niveau supérieur</span>
+                    <span>L’unique programme d’accompagnement à avoir généré</span>
+                    <span>plus de 300 Millions d’Euros pour ses clients ces 7 dernières années en Francophonie</span>
                 </h1>
-                <p>oeuvrez sereinement vers l&apos;accomplissement de votre mission.</p>
-                <DoubleButton text={"En savoir plus"} disableAnimation={false}/>
+                <p>Découvrez en un apercu dans cette vidéo</p>
+                {/*<DoubleButton text={"En savoir plus"} disableAnimation={false}/>*/}
             </div>
             <div className="video-wrapper" ref={videoWrapperRef}>
                 <video
@@ -222,13 +223,13 @@ const HeroInteractive = () => {
                 <div className="highlight highlight-red"></div>
                 <BGGRid images={grids2}/>
                 <div className="text-quote">
-                    Êtes-vous prêt à transformer radicalement votre quotidien et votre vie
-                    en l&apos;espace de quelques mois,
-                    <br/>
-                    en adoptant une stratégie globale pour votre business plutôt que de
-                    vous limiter à sa gestion quotidienne ?
+                    Découvrez Le Programme Scaling : Passez d’un entrepreneur dans l’opérationnel, qui réalise 15K à 80K de C.A mensuel, à un chef d’entreprise qui dépasse la barre des 100K / mois en travaillant sur son business
                 </div>
+                {/*<p>Découvrez Le Programme Scaling : Passez d’un entrepreneur dans l’opérationnel, qui réalise 15K à 80K*/}
+                {/*    de C.A mensuel, à un chef d’entreprise qui dépasse la barre des 100K / mois en travaillant sur son*/}
+                {/*    business </p>*/}
                 <HeroGraph/>
+                <DoubleButton text={"En savoir plus sur ce programme"} disableAnimation={false}/>
                 <BGAnimatedLines/>
             </div>
         </>

@@ -13,24 +13,7 @@ export default function Save({attributes}) {
     return (
         <footer {...blockProps} key={"render"} id="footer">
             <div className="highlight highlight-red"></div>
-            <div className="header">
-                <div className="section-title">
-          <span>
-            Réserve ton appel
-            <br/> d&apos;audit avec
-          </span>
 
-                    <span>un membre de l&apos;équipe</span>
-                </div>
-                <div className="text-wrapper">
-                    <p>
-                        Pour ceux prêts à agir, des membres d&apos;Entrepreneurs.com offrent
-                        un appel d&apos;audit gratuit pour évaluer votre business et
-                        objectifs, et discuter des solutions.
-                    </p>
-                    {/*<DoubleBut text="Réserver un Appel" disableAnimation={true}/>*/}
-                </div>
-            </div>
             <div className="footer">
                 {/*<BGGRid images={grids}/>*/}
                 <div className="upper-section">

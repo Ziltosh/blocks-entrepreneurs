@@ -25,7 +25,7 @@ export const DoubleButton = ({disableAnimation, text}) => {
             ).to(
                 but.current,
                 {
-                    width: ' 22.1875rem',
+                    width: ' 26.1875rem',
                     height: '3.5rem',
                     paddingTop: '0.5rem',
                     paddingRight: '0.5rem',

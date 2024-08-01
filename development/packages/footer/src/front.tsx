@@ -1,6 +1,5 @@
 import {hydrateRoot} from "@wordpress/element";
 import React from "react";
-import {DoubleButton} from "./DoubleButton";
 import BGGRid from "./BGGrid";
 import eFullLogo from "./img/e-full-logo.svg";
 import lIn from "./img/social-icons/in.svg";
@@ -25,23 +24,7 @@ const Footer = () => {
     return (
         <>
             <div className="highlight highlight-red"></div>
-            <div className="header">
-                <div className="section-title">
-          <span>
-            Réserve ton appel
-            <br/> d&apos;audit avec
-          </span>
-                    <span>un membre de l&apos;équipe</span>
-                </div>
-                <div className="text-wrapper">
-                    <p>
-                        Pour ceux prêts à agir, des membres d&apos;Entrepreneurs.com offrent
-                        un appel d&apos;audit gratuit pour évaluer votre business et
-                        objectifs, et discuter des solutions.
-                    </p>
-                    <DoubleButton text="Réserver un Appel" disableAnimation={false}/>
-                </div>
-            </div>
+
             <div className="footer">
                 <BGGRid images={grids}/>
                 <div className="upper-section">

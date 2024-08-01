@@ -1,7 +1,7 @@
 import {useEffect, useRef, useState} from "@wordpress/element";
 import {gsap} from "./gsap";
 
-import redArrow from "./img/svg/red-bg-rarrow.svg";
+import redArrow from "./img/red-bg-rarrow.svg";
 
 
 export const DoubleButton = ({disableAnimation, text}) => {
@@ -25,7 +25,7 @@ export const DoubleButton = ({disableAnimation, text}) => {
             ).to(
                 but.current,
                 {
-                    width: ' 22.1875rem',
+                    width: ' 20.1875rem',
                     height: '3.5rem',
                     paddingTop: '0.5rem',
                     paddingRight: '0.5rem',
@@ -59,9 +59,6 @@ export const DoubleButton = ({disableAnimation, text}) => {
             ref={but}
             className={`but double-border ${animationState ? 'no-anim' : ''}`}
             onMouseOver={() => tl.play()}
-            style={{
-                margin: 'auto'
-            }}
             onMouseLeave={() => tl.reverse()}
         >
             <span>{text}</span>

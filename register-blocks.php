@@ -11,14 +11,14 @@ add_action('init', function() {
         }
 
         wp_register_script(
-            'vite-block-' . $result,
+            'entrepreneurs-' . $result,
             plugins_url(\basename(__DIR__)) . '/build/' . $result . '/front.js',
             ['wp-element'],
             null,
             true
         );
 
-        wp_enqueue_script('vite-block-' . $result);
+        wp_enqueue_script('entrepreneurs-' . $result);
 
         register_block_type($block_location);
     }
