@@ -9,50 +9,27 @@ import Youtube from "./img/social-icons/youtube.svg"
 import TikTok from "./img/social-icons/tiktok.svg"
 import elogo from "./img/svg/e-logo.svg";
 
+import {nav} from "./nav";
+
 export default function Edit({attributes, setAttributes, className}) {
     const blockProps = useBlockProps();
     const innerBlockProps = useInnerBlocksProps(blockProps, {
         template: [
-            ["entrepreneurs/starbutton"],
+            ["core/paragraph", {placeholder: "Add a paragraph"}],
+            ["core/paragraph", {placeholder: "Add a paragraph"}]
         ],
-        templateLock: "all"
+
     });
     const mobileNav = useRef<HTMLDivElement>(null);
 
-    const nav = [
-        {name: "Accueil", href: "/", id: 0},
-        {name: "Nos Strategies", href: "/about", id: 1},
-        {name: "Études de cas", href: "/contact", id: 2},
-        {
-            name: "Ressources",
-            href: "#",
-            id: 3,
-            subNav: [
-                {
-                    name: "La Communauté",
-                    href: "/",
-                    id: 0,
-                },
-                {
-                    name: "Le Déclic",
-                    href: "/",
-                    id: 1,
-                },
-                {
-                    name: "Actualités",
-                    href: "/",
-                    id: 2,
-                },
-            ],
-        },
-    ];
+
 
     return (
 
         // <Header mobileNav={mobileNav}>
         //     {innerBlockProps.children}
         // </Header>
-        <header key={"render"} {...blockProps} id={"header"}>
+        <div key={"render"} {...blockProps} id={"header"}>
             <svg
                 className="mobile-menu-icon"
                 width="24"
@@ -200,7 +177,7 @@ export default function Edit({attributes, setAttributes, className}) {
                 </div>
             </div>
             {innerBlockProps.children}
-        </header>
+        </div>
     )
 }
 

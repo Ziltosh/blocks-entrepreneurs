@@ -7,7 +7,6 @@ export const liens = [
             "Le système",
             "Avis",
             "Actualités",
-            "Le Declic",
         ],
     },
     {

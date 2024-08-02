@@ -1,1 +1,1 @@
-(function(){"use strict"})();
+(function(n,t){"use strict";const r=document.querySelectorAll(".wp-block-entrepreneurs-starbutton"),o=({text:e})=>t.createElement(t.Fragment,null,"test");r.length&&r.forEach(e=>{const s=JSON.parse(e.getAttribute("data-attributes"));n.hydrateRoot(e,t.createElement(o,{...s}))})})(wp.element,window.React);

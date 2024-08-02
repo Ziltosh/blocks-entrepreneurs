@@ -10,9 +10,13 @@
 	"supports": {
 		"html": false
 	},
-    "attributes": {},
+    "attributes": {
+		"text": {
+			"type": "string",
+			"default": "Réserver un appel"
+		}
+	},
     "example": {},
-	"render": "./render.php",
 	"textdomain": "entrepreneurs",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./editor-style.css",

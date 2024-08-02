@@ -7,6 +7,8 @@ import Youtube from "./img/social-icons/youtube.svg"
 import TikTok from "./img/social-icons/tiktok.svg"
 import elogo from "./img/svg/e-logo.svg";
 
+import {nav} from "./nav";
+
 export default function Save({attributes, className}) {
     const blockProps = useBlockProps.save()
     const innerBlockProps = useInnerBlocksProps.save(blockProps)
@@ -17,36 +19,8 @@ export default function Save({attributes, className}) {
     //     </Header>
     // )
 
-    const nav = [
-        {name: "Accueil", href: "/", id: 0},
-        {name: "Nos Strategies", href: "/about", id: 1},
-        {name: "Études de cas", href: "/contact", id: 2},
-        {
-            name: "Ressources",
-            href: "#",
-            id: 3,
-            subNav: [
-                {
-                    name: "La Communauté",
-                    href: "/",
-                    id: 0,
-                },
-                {
-                    name: "Le Déclic",
-                    href: "/",
-                    id: 1,
-                },
-                {
-                    name: "Actualités",
-                    href: "/",
-                    id: 2,
-                },
-            ],
-        },
-    ];
-
     return (
-        <header key={"render"} {...blockProps} id={"header"}>
+        <div key={"render"} {...blockProps} id={"header"}>
             <svg
                 className="mobile-menu-icon"
                 width="24"
@@ -193,8 +167,10 @@ export default function Save({attributes, className}) {
                     </ul>
                 </div>
             </div>
+            <div className="inner-blocks">
             {innerBlockProps.children}
-        </header>
+            </div>
+        </div>
     );
 
 }

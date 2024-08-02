@@ -10,7 +10,12 @@
 	"supports": {
 		"html": true
 	},
-    "attributes": {},
+    "attributes": {
+		"text": {
+			"type": "string",
+			"default": "Réserver un appel"
+		}
+	},
 	"example": {},
 	"textdomain": "entrepreneurs",
 	"editorScript": "file:./index.js",

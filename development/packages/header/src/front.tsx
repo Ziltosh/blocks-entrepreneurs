@@ -7,11 +7,17 @@ import Youtube from "./img/social-icons/youtube.svg"
 import TikTok from "./img/social-icons/tiktok.svg"
 import elogo from "./img/svg/e-logo.svg";
 
+import {nav} from "./nav";
+
+
 const elements = document.querySelectorAll('.wp-block-entrepreneurs-header');
 
-const HeaderInteractive = () => {
+const HeaderInteractive = ({innerBlocks}) => {
     const mobileNav = useRef<HTMLDivElement>(null);
     const [state, setState] = useState(true);
+
+    console.log("header")
+    console.log(innerBlocks)
 
     const handleMobileMenu = () => {
         mobileNav.current!.classList.toggle("active");
@@ -22,34 +28,6 @@ const HeaderInteractive = () => {
         //   document.body.style.overflow = "unset";
         // }
     };
-
-    const nav = [
-        {name: "Accueil", href: "/", id: 0},
-        {name: "Nos Strategies", href: "/about", id: 1},
-        {name: "Études de cas", href: "/contact", id: 2},
-        {
-            name: "Ressources",
-            href: "#",
-            id: 3,
-            subNav: [
-                {
-                    name: "La Communauté",
-                    href: "/",
-                    id: 0,
-                },
-                {
-                    name: "Le Déclic",
-                    href: "/",
-                    id: 1,
-                },
-                {
-                    name: "Actualités",
-                    href: "/",
-                    id: 2,
-                },
-            ],
-        },
-    ];
 
 
     return (
@@ -201,13 +179,14 @@ const HeaderInteractive = () => {
                     </ul>
                 </div>
             </div>
-
+            {innerBlocks}
         </>
     )
 }
 
 if (elements.length) {
     elements.forEach(element => {
-        hydrateRoot(element, <HeaderInteractive/>)
+        const innerBlocks = element.querySelector('.inner-blocks')?.innerHTML || '';
+        hydrateRoot(element, <HeaderInteractive innerBlocks={<div dangerouslySetInnerHTML={{ __html: innerBlocks }} />} />);
     })
 }
