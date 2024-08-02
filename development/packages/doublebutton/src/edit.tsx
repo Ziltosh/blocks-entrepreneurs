@@ -21,6 +21,10 @@ export default function Edit({attributes, setAttributes, isSelected}) {
         setAttributes({centered});
     }
 
+    const handleChangeLien = (lien) => {
+        setAttributes({lien});
+    }
+
     const but = useRef<HTMLButtonElement>(null);
     const tl = gsap.timeline({paused: true});
     const [animationState, setAnimationState] = useState(false);
@@ -82,22 +86,24 @@ export default function Edit({attributes, setAttributes, isSelected}) {
         <>
             <div {...blockProps} key={"render"}>
                 <div style={style}>
-                    <button
-                        ref={but}
-                        style={{
-                            maxWidth: attributes.size,
-                            marginLeft: attributes.centered ? 'auto' : '0',
-                            marginRight: attributes.centered ? 'auto' : '0'
-                        }}
-                        className={`but double-border ${animationState ? 'no-anim' : ''}`}
-                        onMouseOver={() => tl.play()}
-                        onMouseLeave={() => tl.reverse()}
-                    >
-                        <span>{attributes.text}</span>
+                    <a href={attributes.lien} style={{textDecoration: "none"}}>
+                        <button
+                            ref={but}
+                            style={{
+                                maxWidth: attributes.size,
+                                marginLeft: attributes.centered ? 'auto' : '0',
+                                marginRight: attributes.centered ? 'auto' : '0'
+                            }}
+                            className={`but double-border ${animationState ? 'no-anim' : ''}`}
+                            onMouseOver={() => tl.play()}
+                            onMouseLeave={() => tl.reverse()}
+                        >
+                            <span>{attributes.text}</span>
 
-                        <img src={redArrow} alt=""/>
-                        {/* <RedArrRight /> */}
-                    </button>
+                            <img src={redArrow} alt=""/>
+                            {/* <RedArrRight /> */}
+                        </button>
+                    </a>
                 </div>
             </div>
             <InspectorControls>
@@ -113,6 +119,12 @@ export default function Edit({attributes, setAttributes, isSelected}) {
                         label="Taille du bouton"
                         onChange={handleChangeSize}
                         value={attributes.size}
+                    />
+                    <TextControl
+                        help=""
+                        label="Lien"
+                        onChange={handleChangeLien}
+                        value={attributes.lien}
                     />
                     <ToggleControl
                         label="Centré"

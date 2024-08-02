@@ -5,7 +5,7 @@ import {gsap} from "./gsap";
 
 const elements = document.querySelectorAll('.wp-block-entrepreneurs-doublebutton');
 
-const DoubleButton = ({text, size, centered}) => {
+const DoubleButton = ({text, size, centered, lien}) => {
 
     const but = useRef<HTMLButtonElement>(null);
     const tl = gsap.timeline({paused: true});
@@ -66,19 +66,21 @@ const DoubleButton = ({text, size, centered}) => {
 
     return (
         <div style={style}>
-            <button
-                ref={but}
-                className={`but double-border ${animationState ? 'no-anim' : ''}`}
-                onMouseOver={() => tl.play()}
-                onMouseLeave={() => tl.reverse()}
-                style={{}}
-            >
-                <span>{text}</span>
-                <img src={redArrow} alt=""/>
-                {/* <RedArrRight /> */}
-            </button>
+            <a href={lien} style={{textDecoration: "none"}}>
+                <button
+                    ref={but}
+                    className={`but double-border ${animationState ? 'no-anim' : ''}`}
+                    onMouseOver={() => tl.play()}
+                    onMouseLeave={() => tl.reverse()}
+                    style={{}}
+                >
+                    <span>{text}</span>
+                    <img src={redArrow} alt=""/>
+                    {/* <RedArrRight /> */}
+                </button>
+            </a>
         </div>
-    )
+)
 }
 
 if (elements.length) {

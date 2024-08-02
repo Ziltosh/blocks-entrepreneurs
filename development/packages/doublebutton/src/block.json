@@ -22,6 +22,10 @@
 		"centered": {
 			"type": "boolean",
 			"default": false
+		},
+		"lien": {
+			"type": "string",
+			"default": "https://www.google.com"
 		}
 	},
     "example": {},

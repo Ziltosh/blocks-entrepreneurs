@@ -13,13 +13,12 @@ export default function Edit({attributes, setAttributes, isSelected}) {
     return [
         <>
             <div key="render" {...blockProps}>
-                test
-                {/*<div className="but star-but">*/}
-                {/*    <span>{attributes.text}</span>*/}
-                {/*    /!*<img className="star-1" src={star1} alt=""/>*!/*/}
-                {/*    /!*<img className="star-2" src={star2} alt=""/>*!/*/}
-                {/*    /!*<img className="star-3" src={star2} alt=""/>*!/*/}
-                {/*</div>*/}
+                <div className="but star-but">
+                    <span>{attributes.text}</span>
+                    {/*<img className="star-1" src={star1} alt=""/>*/}
+                    {/*<img className="star-2" src={star2} alt=""/>*/}
+                    {/*<img className="star-3" src={star2} alt=""/>*/}
+                </div>
             </div>
             <InspectorControls>
                 <PanelBody title={"Réglages"}>

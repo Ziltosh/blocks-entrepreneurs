@@ -6,13 +6,15 @@ export default function Save({attributes}) {
 
     return (
         <div {...blockProps} key={"render"} data-attributes={JSON.stringify(attributes)}>
-            <button
-                className={`but double-border`}
-            >
-                <span>{attributes.text}</span>
-                <img src={redArrow} alt=""/>
-                {/* <RedArrRight /> */}
-            </button>
+            <a href={attributes.lien} style={{textDecoration: "none"}}>
+                <button
+                    className={`but double-border`}
+                >
+                    <span>{attributes.text}</span>
+                    <img src={redArrow} alt=""/>
+                    {/* <RedArrRight /> */}
+                </button>
+            </a>
         </div>
-    );
+);
 }

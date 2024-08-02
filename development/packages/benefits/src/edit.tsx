@@ -9,7 +9,7 @@ import Icon2 from './img/Icon-5.png';
 import Icon3 from './img/Icon-6.png';
 import {DoubleButton} from "./DoubleButton";
 
-export default function Edit({ attributes, setAttributes, isSelected }) {
+export default function Edit({attributes, setAttributes, isSelected}) {
     const blockProps = useBlockProps();
     const headerRef = useRef<HTMLDivElement>(null);
     const headerRef2 = useRef<HTMLDivElement>(null);
@@ -54,7 +54,9 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
                     <div className="border-line"></div>
                 </div>
             </div>
-            <DoubleButton text={"En savoir plus sur l’équipe Entrepreneurs.com"} disableAnimation={false}/>
+            <a href="/equipe">
+                <DoubleButton text={"En savoir plus sur l’équipe Entrepreneurs.com"} disableAnimation={false}/>
+            </a>
 
             <div ref={headerRef2} className="header" style={{marginTop: '10rem'}}>
                 {/*<div className="small-badge">Nos programmes</div>*/}

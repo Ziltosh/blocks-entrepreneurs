@@ -49,12 +49,12 @@ export const Benefits = () => {
         tl.add('start', 0);
         tl.fromTo(
             headerRef.current.querySelector('.small-badge'),
-            { y: 150, opacity: 0 },
-            { y: 0, opacity: 1 },
+            {y: 150, opacity: 0},
+            {y: 0, opacity: 1},
             'start'
         )
-            .fromTo(split1.words, { y: 150 }, { y: 0, stagger: 0.1 }, 'start+=.25')
-            .fromTo(split2.words, { opacity: 0 }, { opacity: 1, stagger: 0.05 }, 'start+=0.5')
+            .fromTo(split1.words, {y: 150}, {y: 0, stagger: 0.1}, 'start+=.25')
+            .fromTo(split2.words, {opacity: 0}, {opacity: 1, stagger: 0.05}, 'start+=0.5')
             .fromTo(
                 gsap.utils.toArray(cardsRef.current?.querySelectorAll('.card img')),
                 {
@@ -146,7 +146,9 @@ export const Benefits = () => {
                     <div className="border-line"></div>
                 </div>
             </div>
-            <DoubleButton text={"En savoir plus sur l’équipe Entrepreneurs.com"} disableAnimation={false}/>
+            <a href="/equipe">
+                <DoubleButton text={"En savoir plus sur l’équipe Entrepreneurs.com"} disableAnimation={false}/>
+            </a>
 
             <div className="header" style={{marginTop: '10rem'}}>
                 {/*<div className="small-badge">Nos programmes</div>*/}

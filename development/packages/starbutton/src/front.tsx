@@ -7,13 +7,12 @@ const elements = document.querySelectorAll('.wp-block-entrepreneurs-starbutton')
 const StarButton = ({text}) => {
 
     return (
-        <>test</>
-        // <div className="but star-but">
-        //     <span>{text}</span>
-        //     {/*<img className="star-1" src={star1} alt=""/>*/}
-        //     {/*<img className="star-2" src={star2} alt=""/>*/}
-        //     {/*<img className="star-3" src={star2} alt=""/>*/}
-        // </div>
+        <div className="but star-but">
+            <span>{text}</span>
+            {/*<img className="star-1" src={star1} alt=""/>*/}
+            {/*<img className="star-2" src={star2} alt=""/>*/}
+            {/*<img className="star-3" src={star2} alt=""/>*/}
+        </div>
     )
 }
 
