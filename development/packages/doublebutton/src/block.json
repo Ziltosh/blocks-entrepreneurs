@@ -18,6 +18,10 @@
 		"size": {
 			"type": "string",
 			"default": "20rem"
+		},
+		"centered": {
+			"type": "boolean",
+			"default": false
 		}
 	},
     "example": {},

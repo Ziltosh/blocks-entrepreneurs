@@ -1,5 +1,5 @@
 import {InspectorControls, useBlockProps} from "@wordpress/block-editor";
-import {PanelBody, TextControl} from "@wordpress/components";
+import {PanelBody, TextControl, ToggleControl} from "@wordpress/components";
 
 import "./editor-style.css";
 import {useEffect, useRef, useState} from "@wordpress/element";
@@ -15,6 +15,10 @@ export default function Edit({attributes, setAttributes, isSelected}) {
 
     const handleChangeSize = (size) => {
         setAttributes({size});
+    }
+
+    const handleChangeCentered = (centered) => {
+        setAttributes({centered});
     }
 
     const but = useRef<HTMLButtonElement>(null);
@@ -66,37 +70,54 @@ export default function Edit({attributes, setAttributes, isSelected}) {
         };
     }, [tl, animationState]);
 
+    let style = {}
+    if (attributes.centered) {
+        style = {
+            display: 'flex',
+            justifyContent: 'center'
+        }
+    }
+
     return [
         <>
             <div {...blockProps} key={"render"}>
-                <button
-                    ref={but}
-                    style={{
-                        maxWidth: attributes.size,
-                    }}
-                    className={`but double-border ${animationState ? 'no-anim' : ''}`}
-                    onMouseOver={() => tl.play()}
-                    onMouseLeave={() => tl.reverse()}
-                >
-                    <span>{attributes.text}</span>
+                <div style={style}>
+                    <button
+                        ref={but}
+                        style={{
+                            maxWidth: attributes.size,
+                            marginLeft: attributes.centered ? 'auto' : '0',
+                            marginRight: attributes.centered ? 'auto' : '0'
+                        }}
+                        className={`but double-border ${animationState ? 'no-anim' : ''}`}
+                        onMouseOver={() => tl.play()}
+                        onMouseLeave={() => tl.reverse()}
+                    >
+                        <span>{attributes.text}</span>
 
-                    <img src={redArrow} alt=""/>
-                    {/* <RedArrRight /> */}
-                </button>
+                        <img src={redArrow} alt=""/>
+                        {/* <RedArrRight /> */}
+                    </button>
+                </div>
             </div>
             <InspectorControls>
                 <PanelBody title={"Réglages"}>
-                <TextControl
-                    help=""
-                    label="Texte du bouton"
-                    onChange={handleChangeText}
-                    value={attributes.text}
-                />
+                    <TextControl
+                        help=""
+                        label="Texte du bouton"
+                        onChange={handleChangeText}
+                        value={attributes.text}
+                    />
                     <TextControl
                         help="Taille du bouton une fois ouvert"
                         label="Taille du bouton"
                         onChange={handleChangeSize}
                         value={attributes.size}
+                    />
+                    <ToggleControl
+                        label="Centré"
+                        checked={attributes.centered}
+                        onChange={handleChangeCentered}
                     />
                 </PanelBody>
             </InspectorControls>

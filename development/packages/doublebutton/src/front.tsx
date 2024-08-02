@@ -5,7 +5,7 @@ import {gsap} from "./gsap";
 
 const elements = document.querySelectorAll('.wp-block-entrepreneurs-doublebutton');
 
-const DoubleButton = ({text, size}) => {
+const DoubleButton = ({text, size, centered}) => {
 
     const but = useRef<HTMLButtonElement>(null);
     const tl = gsap.timeline({paused: true});
@@ -27,7 +27,7 @@ const DoubleButton = ({text, size}) => {
             ).to(
                 but.current,
                 {
-                    width: ' 20.1875rem',
+                    width: size,
                     height: '3.5rem',
                     paddingTop: '0.5rem',
                     paddingRight: '0.5rem',
@@ -56,20 +56,28 @@ const DoubleButton = ({text, size}) => {
         };
     }, [tl, animationState]);
 
+    let style = {}
+    if (centered) {
+        style = {
+            display: 'flex',
+            justifyContent: 'center'
+        }
+    }
+
     return (
-        <button
-            ref={but}
-            className={`but double-border ${animationState ? 'no-anim' : ''}`}
-            onMouseOver={() => tl.play()}
-            onMouseLeave={() => tl.reverse()}
-            style={{
-                maxWidth: size,
-            }}
-        >
-            <span>{text}</span>
-            <img src={redArrow} alt=""/>
-            {/* <RedArrRight /> */}
-        </button>
+        <div style={style}>
+            <button
+                ref={but}
+                className={`but double-border ${animationState ? 'no-anim' : ''}`}
+                onMouseOver={() => tl.play()}
+                onMouseLeave={() => tl.reverse()}
+                style={{}}
+            >
+                <span>{text}</span>
+                <img src={redArrow} alt=""/>
+                {/* <RedArrRight /> */}
+            </button>
+        </div>
     )
 }
 
