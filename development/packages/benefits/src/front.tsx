@@ -148,7 +148,7 @@ export const Benefits = () => {
             </div>
             <DoubleButton text={"En savoir plus sur l’équipe Entrepreneurs.com"} disableAnimation={false}/>
 
-            <div className="header">
+            <div className="header" style={{marginTop: '10rem'}}>
                 {/*<div className="small-badge">Nos programmes</div>*/}
                 <h1 className="section-title">
                     <span>Les 3 piliers fondamentaux</span>

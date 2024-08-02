@@ -56,7 +56,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
             </div>
             <DoubleButton text={"En savoir plus sur l’équipe Entrepreneurs.com"} disableAnimation={false}/>
 
-            <div ref={headerRef2} className="header">
+            <div ref={headerRef2} className="header" style={{marginTop: '10rem'}}>
                 {/*<div className="small-badge">Nos programmes</div>*/}
                 <h1 className="section-title">
                     <span>Les 3 piliers fondamentaux</span>
