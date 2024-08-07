@@ -13,7 +13,7 @@ export default function Edit({attributes, setAttributes, isSelected}) {
     const cardsRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div key="render" {...blockProps} id="benefits">
+        <div key="render" {...blockProps} id="benefits3">
             {/*<Lottie animationData={letter} className="letter-e"/>*/}
             <div className="highlight highlight-red"></div>
             <div ref={headerRef} className="header">

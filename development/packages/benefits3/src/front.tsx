@@ -27,7 +27,7 @@ export const Benefits3 = () => {
 
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: '#benefits',
+                trigger: '#benefits3',
                 scrub: true,
                 markers: false,
                 start: 'top 70%',
