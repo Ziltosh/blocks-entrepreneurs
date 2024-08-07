@@ -10,26 +10,27 @@ import logo6 from "./img/svg/logos/logo-6.svg";
 import logo7 from "./img/svg/logos/logo-7.svg";
 import logo8 from "./img/svg/logos/logo-8.svg";
 import logo9 from "./img/svg/logos/logo-9.svg";
-// import storeDevice from "../utils/store";
+import {useEffect, useState} from "@wordpress/element";
+import storeDevice from "./store";
 
 export default function ClientLogos() {
 
     const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
-    // const { device } = storeDevice();
-    const device = "desktop";
-    // const [gsp, setGsp] = useState("0");
-    const gsp = "3.84rem";
+    const { device } = storeDevice();
+    // const device = "desktop";
+    const [gsp, setGsp] = useState("0");
+    // const gsp = "3.84rem";
 
-    // useEffect(() => {
-    //     device === "desktop" && setGsp("3.84rem");
-    //     device === "mobile" && setGsp("2rem");
-    // }, []);
+    useEffect(() => {
+        device === "desktop" && setGsp("3.84rem");
+        device === "mobile" && setGsp("2rem");
+    }, []);
 
-    // useEffect(() => {
-    //     if (device === "desktop" || device === "laptop" || device === "tablet")
-    //         setGsp("3.84rem");
-    //     if (device === "mobile") setGsp("2rem");
-    // }, [device]);
+    useEffect(() => {
+        if (device === "desktop" || device === "laptop" || device === "tablet")
+            setGsp("3.84rem");
+        if (device === "mobile") setGsp("2rem");
+    }, [device]);
 
     return (
         <div className="client-logos">

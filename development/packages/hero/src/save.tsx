@@ -1,5 +1,6 @@
 import {useBlockProps} from "@wordpress/block-editor";
 import play from "./img/svg/play.svg";
+import {texts} from "./texts";
 
 export default function Save({attributes}) {
     const blockProps = useBlockProps.save();
@@ -62,14 +63,14 @@ export default function Save({attributes}) {
             </div>
             <div className="header" ref={null}>
                 <div className="badge">
-                    +10 000 entrepreneurs francophones ont vu leurs vies transformées
+                    {texts.text1}
                 </div>
                 <h1 className="section-title">
-                    <span>Propulsez l&apos;Entrepreneur que</span>
-                    <span>vous êtes à un niveau supérieur</span>
+                    <span>{texts.text2_1}</span>
+                    <span>{texts.text2_2}</span>
                 </h1>
-                <p>oeuvrez sereinement vers l&apos;accomplissement de votre mission.</p>
-                {/*<DoubleButton text={"En savoir plus"} disableAnimation={false} />*/}
+                <p>Découvrez en un apercu dans cette vidéo</p>
+                {/*<DoubleButton text={texts.btn1} disableAnimation={false}/>*/}
             </div>
             <div className="video-wrapper" ref={null}>
                 <video
@@ -92,11 +93,7 @@ export default function Save({attributes}) {
                 <div className="highlight highlight-red"></div>
                 {/*<BGGRid images={grids2}/>*/}
                 <div className="text-quote">
-                    Êtes-vous prêt à transformer radicalement votre quotidien et votre vie
-                    en l&apos;espace de quelques mois,
-                    <br/>
-                    en adoptant une stratégie globale pour votre business plutôt que de
-                    vous limiter à sa gestion quotidienne ?
+                    {texts.text3}
                 </div>
                 {/*<HeroGraph/>*/}
                 {/*<BGAnimatedLines/>*/}

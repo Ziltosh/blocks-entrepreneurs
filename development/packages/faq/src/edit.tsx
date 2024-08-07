@@ -16,13 +16,6 @@ import {gsap} from "./gsap";
 
 export default function Edit({attributes, setAttributes, isSelected}) {
     const blockProps = useBlockProps();
-    const answerRef = useRef<HTMLDivElement>(null);
-    const faqRef = useRef<HTMLDivElement>(null);
-
-    const [isAnswerVisible, setIsAnswerVisible] = useState<boolean>(false);
-    const toggleAnswerVisibility = () => {
-        setIsAnswerVisible(!isAnswerVisible);
-    };
 
 
     const grids = [gridDesktop, gridLaptop, gridTablet, gridMobile];
@@ -77,14 +70,13 @@ function FAQItem({ faq, index }: { faq: FAQType; index: number }) {
     }, [isAnswerVisible]);
 
     return (
-        <div className="faq-item">
+        <div className="faq-item" ref={faqRef}
+             onClick={() => toggleAnswerVisibility()}>
       <span className="index">
         {index + 1 < 10 ? `0${index + 1}` : `${index + 1}`}
       </span>
             <div
                 className="faq"
-                ref={faqRef}
-                onClick={() => toggleAnswerVisibility()}
             >
                 <div className="question">{faq.question}</div>
                 <div className="answer" ref={answerRef} style={{ maxHeight: "0px" }}>

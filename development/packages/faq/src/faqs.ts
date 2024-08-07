@@ -14,7 +14,7 @@ export const faqs: FAQType[] = [
         answer: "Nous avons des experts dans tous les domaines.",
     },
     {
-        question: "A qui s'adresse vos accompagnements ?",
+        question: "Qui sont les coachs d'Entrepreneurs.com ?",
         answer:
             "Les coachs d'Entrepreneurs.com sont des experts de leur discipline, eux-mêmes entrepreneurs, sélectionnés avec rigueur pour leur maîtrise, leurs expériences et leur volonté d'aider les Entrepreneurs à accomplir leur mission.",
     },

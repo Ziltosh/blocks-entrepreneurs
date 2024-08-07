@@ -15,6 +15,7 @@ import play from "./img/svg/play.svg";
 import {BGAnimatedLines} from "./BgAnimatedLines";
 import {HeroGraph} from "./HeroGraph";
 import {DoubleButton} from "./DoubleButton";
+import {texts} from "./texts";
 
 
 export default function Edit({attributes, setAttributes, isSelected}) {
@@ -97,15 +98,14 @@ export default function Edit({attributes, setAttributes, isSelected}) {
             </div>
             <div className="header" ref={headerRef}>
                 <div className="badge">
-                    Nous avons accompagné + 10 500 entrepreneurs dans des centaines de niches différentes
-                    (autant de business physique que en ligne)
+                    {texts.text1}
                 </div>
                 <h1 className="section-title">
-                    <span>L’unique programme d’accompagnement à avoir généré</span>
-                    <span>plus de 300 Millions d’Euros pour ses clients ces 7 dernières années en Francophonie</span>
+                    <span>{texts.text2_1}</span>
+                    <span>{texts.text2_2}</span>
                 </h1>
                 <p>Découvrez en un apercu dans cette vidéo</p>
-                {/*<DoubleButton text={"En savoir plus"} disableAnimation={false} />*/}
+                <DoubleButton text={texts.btn1} disableAnimation={false} />
             </div>
             <div className="video-wrapper" ref={videoWrapperRef}>
                 <video
@@ -128,11 +128,11 @@ export default function Edit({attributes, setAttributes, isSelected}) {
                 <div className="highlight highlight-red"></div>
                 <BGGRid images={grids2}/>
                 <div className="text-quote">
-                    Découvrez Le Programme Scaling : Passez d’un entrepreneur dans l’opérationnel, qui réalise 15K à 80K de C.A mensuel, à un chef d’entreprise qui dépasse la barre des 100K / mois en travaillant sur son business
+                    {texts.text3}
                 </div>
                 {/*<p>Découvrez Le Programme Scaling : Passez d’un entrepreneur dans l’opérationnel, qui réalise 15K à 80K de C.A mensuel, à un chef d’entreprise qui dépasse la barre des 100K / mois en travaillant sur son business </p>*/}
                 <HeroGraph/>
-                <DoubleButton text={"En savoir plus sur ce programme"} disableAnimation={false}/>
+                {/*<DoubleButton text={texts.btn2} disableAnimation={false}/>*/}
                 <BGAnimatedLines/>
             </div>
         </div>
