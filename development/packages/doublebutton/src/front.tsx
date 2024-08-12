@@ -1,21 +1,20 @@
-import {hydrateRoot, useEffect, useRef, useState} from "@wordpress/element";
-import React from "react";
-import redArrow from "./img/red-bg-rarrow.svg";
-import {gsap} from "./gsap";
+import { hydrateRoot, useEffect, useRef, useState } from '@wordpress/element';
+import redArrow from './img/red-bg-rarrow.svg';
+import { gsap } from './gsap';
 
 const elements = document.querySelectorAll('.wp-block-entrepreneurs-doublebutton');
 
-const DoubleButton = ({text, size, centered, lien}) => {
-
+const DoubleButton = ({ disableAnimation = false, text, size, centered, lien }) => {
     const but = useRef<HTMLButtonElement>(null);
-    const tl = gsap.timeline({paused: true});
-    const [animationState, setAnimationState] = useState(false);
+    const tl = gsap.timeline({ paused: true });
+    const [animationState, setAnimationState] = useState(disableAnimation);
     useEffect(() => {
         if (window.innerWidth < 768) {
             setAnimationState(true);
         }
     }, []);
     useEffect(() => {
+        // console.log('useEffect', animationState, but.current);
         if (but.current && !animationState) {
             tl.add('start', 0);
             tl.to(
@@ -56,17 +55,17 @@ const DoubleButton = ({text, size, centered, lien}) => {
         };
     }, [tl, animationState]);
 
-    let style = {}
+    let style = {};
     if (centered) {
         style = {
             display: 'flex',
-            justifyContent: 'center'
-        }
+            justifyContent: 'center',
+        };
     }
 
     return (
         <div style={style}>
-            <a href={lien} style={{textDecoration: "none"}}>
+            <a href={lien} style={{ textDecoration: 'none' }}>
                 <button
                     ref={but}
                     className={`but double-border ${animationState ? 'no-anim' : ''}`}
@@ -75,17 +74,17 @@ const DoubleButton = ({text, size, centered, lien}) => {
                     style={{}}
                 >
                     <span>{text}</span>
-                    <img src={redArrow} alt=""/>
+                    <img src={redArrow} alt="" />
                     {/* <RedArrRight /> */}
                 </button>
             </a>
         </div>
-)
-}
+    );
+};
 
 if (elements.length) {
     elements.forEach((element) => {
         const attributes = JSON.parse(element.getAttribute('data-attributes'));
-        hydrateRoot(element, <DoubleButton {...attributes}/>);
+        hydrateRoot(element, <DoubleButton {...attributes} />);
     });
 }

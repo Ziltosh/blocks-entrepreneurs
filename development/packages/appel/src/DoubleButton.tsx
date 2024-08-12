@@ -1,12 +1,11 @@
-import {useEffect, useRef, useState} from "@wordpress/element";
-import {gsap} from "./gsap";
+import { useEffect, useRef, useState } from '@wordpress/element';
+import { gsap } from './gsap';
 
-import redArrow from "./img/red-bg-rarrow.svg";
+import redArrow from './img/red-bg-rarrow.svg';
 
-
-export const DoubleButton = ({disableAnimation, text}) => {
+export const DoubleButton = ({ disableAnimation, text }) => {
     const but = useRef<HTMLButtonElement>(null);
-    const tl = gsap.timeline({paused: true});
+    const tl = gsap.timeline({ paused: true });
     const [animationState, setAnimationState] = useState(disableAnimation);
     useEffect(() => {
         if (window.innerWidth < 768) {
@@ -62,8 +61,8 @@ export const DoubleButton = ({disableAnimation, text}) => {
             onMouseLeave={() => tl.reverse()}
         >
             <span>{text}</span>
-            <img src={redArrow} alt=""/>
+            <img src={redArrow} alt="" />
             {/* <RedArrRight /> */}
         </button>
     );
-}
+};

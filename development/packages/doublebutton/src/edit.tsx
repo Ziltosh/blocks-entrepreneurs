@@ -1,32 +1,32 @@
-import {InspectorControls, useBlockProps} from "@wordpress/block-editor";
-import {PanelBody, TextControl, ToggleControl} from "@wordpress/components";
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 
-import "./editor-style.css";
-import {useEffect, useRef, useState} from "@wordpress/element";
-import {gsap} from "./gsap";
-import redArrow from "./img/red-bg-rarrow.svg";
+import './editor-style.css';
+import { useEffect, useRef, useState } from '@wordpress/element';
+import { gsap } from './gsap';
+import redArrow from './img/red-bg-rarrow.svg';
 
-export default function Edit({attributes, setAttributes, isSelected}) {
+export default function Edit({ attributes, setAttributes, isSelected }) {
     const blockProps = useBlockProps();
 
     const handleChangeText = (text) => {
-        setAttributes({text});
-    }
+        setAttributes({ text });
+    };
 
     const handleChangeSize = (size) => {
-        setAttributes({size});
-    }
+        setAttributes({ size });
+    };
 
     const handleChangeCentered = (centered) => {
-        setAttributes({centered});
-    }
+        setAttributes({ centered });
+    };
 
     const handleChangeLien = (lien) => {
-        setAttributes({lien});
-    }
+        setAttributes({ lien });
+    };
 
     const but = useRef<HTMLButtonElement>(null);
-    const tl = gsap.timeline({paused: true});
+    const tl = gsap.timeline({ paused: true });
     const [animationState, setAnimationState] = useState(false);
     useEffect(() => {
         if (window.innerWidth < 768) {
@@ -74,25 +74,25 @@ export default function Edit({attributes, setAttributes, isSelected}) {
         };
     }, [tl, animationState]);
 
-    let style = {}
+    let style = {};
     if (attributes.centered) {
         style = {
             display: 'flex',
-            justifyContent: 'center'
-        }
+            justifyContent: 'center',
+        };
     }
 
     return [
         <>
-            <div {...blockProps} key={"render"}>
+            <div {...blockProps} key={'render'}>
                 <div style={style}>
-                    <a href={attributes.lien} style={{textDecoration: "none"}}>
+                    <a href={attributes.lien} style={{ textDecoration: 'none' }}>
                         <button
                             ref={but}
                             style={{
                                 maxWidth: attributes.size,
                                 marginLeft: attributes.centered ? 'auto' : '0',
-                                marginRight: attributes.centered ? 'auto' : '0'
+                                marginRight: attributes.centered ? 'auto' : '0',
                             }}
                             className={`but double-border ${animationState ? 'no-anim' : ''}`}
                             onMouseOver={() => tl.play()}
@@ -100,40 +100,25 @@ export default function Edit({attributes, setAttributes, isSelected}) {
                         >
                             <span>{attributes.text}</span>
 
-                            <img src={redArrow} alt=""/>
+                            <img src={redArrow} alt="" />
                             {/* <RedArrRight /> */}
                         </button>
                     </a>
                 </div>
             </div>
             <InspectorControls>
-                <PanelBody title={"Réglages"}>
-                    <TextControl
-                        help=""
-                        label="Texte du bouton"
-                        onChange={handleChangeText}
-                        value={attributes.text}
-                    />
+                <PanelBody title={'Réglages'}>
+                    <TextControl help="" label="Texte du bouton" onChange={handleChangeText} value={attributes.text} />
                     <TextControl
                         help="Taille du bouton une fois ouvert"
                         label="Taille du bouton"
                         onChange={handleChangeSize}
                         value={attributes.size}
                     />
-                    <TextControl
-                        help=""
-                        label="Lien"
-                        onChange={handleChangeLien}
-                        value={attributes.lien}
-                    />
-                    <ToggleControl
-                        label="Centré"
-                        checked={attributes.centered}
-                        onChange={handleChangeCentered}
-                    />
+                    <TextControl help="" label="Lien" onChange={handleChangeLien} value={attributes.lien} />
+                    <ToggleControl label="Centré" checked={attributes.centered} onChange={handleChangeCentered} />
                 </PanelBody>
             </InspectorControls>
-        </>
-
+        </>,
     ];
 }

@@ -1,17 +1,15 @@
-import {useBlockProps} from "@wordpress/block-editor";
+import { useBlockProps } from '@wordpress/block-editor';
 
-export default function Save({attributes}) {
+export default function Save({ attributes }) {
     const blockProps = useBlockProps.save();
 
     return (
-        <div {...blockProps} key={"render"} id="appel">
+        <div {...blockProps} key={'render'} id="appel">
             {/*<div className="highlight highlight-red"></div>*/}
             <div className="header">
                 <div className="section-title">
-          <span>
-            Je souhaite être recontacté
-          </span>
-                    <span>par Entrepreneurs.com</span>
+                    <span>Je souhaite être recontacté</span>
+                    <span>par Entrepreneurs</span>
                 </div>
                 <div className="text-wrapper">
                     <p>
@@ -20,7 +18,6 @@ export default function Save({attributes}) {
                     </p>
                 </div>
             </div>
-
         </div>
     );
 }
